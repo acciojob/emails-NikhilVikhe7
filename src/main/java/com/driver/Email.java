@@ -1,5 +1,7 @@
 package com.driver;
 
+import java.util.Objects;
+
 public class Email {
 
     private String emailId;
@@ -25,5 +27,15 @@ public class Email {
         // 3. It contains at least one lowercase letter
         // 4. It contains at least one digit
         // 5. It contains at least one special character. Any character apart from alphabets and digits is a special character
+
+        if(Objects.equals(oldPassword, this.password) && isValidPassword(newPassword)){
+            this.password = newPassword;
+        }
+    }
+
+    public static boolean isValidPassword(String password){
+        if(password.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,}$"))
+            return true;
+        return false;
     }
 }
