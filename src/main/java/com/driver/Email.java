@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Email {
 
-    private String emailId;
+    private final String emailId;
     private String password;
 
     public Email(String emailId){
@@ -28,7 +28,7 @@ public class Email {
         // 4. It contains at least one digit
         // 5. It contains at least one special character. Any character apart from alphabets and digits is a special character
 
-        if(Objects.equals(oldPassword, this.password) && isValidPassword(newPassword)){
+        if(this.password.equals(oldPassword) && isValidPassword(newPassword)){
             this.password = newPassword;
         }
     }

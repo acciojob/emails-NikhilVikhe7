@@ -9,7 +9,7 @@ public class Gmail extends Email {
 
 //    MailList mails;
 
-    class Mail{
+    private static class  Mail{
         private final String message;
         private final Date date;
         private String sender;
@@ -76,7 +76,7 @@ public class Gmail extends Email {
 
     public String findOldestMessage(){
         // If the inbox is empty, return null
-        // Else, return the message of the oldest mail present in the inbox
+        // Else, return the message of the oldest mail present in the inboxa
         return inbox.get(0).message;
 
     }
